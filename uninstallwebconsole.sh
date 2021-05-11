@@ -8,10 +8,10 @@ else
         echo "Proceeding with Operation"
 
         #loop to remove tomcat applications
-        tomcat=$(rpm -qa | grep -i tomcat)
+        tomcat=$(yum list installed | grep -i tomcat)
         for i in $tomcat
         do
-        rpm -e $i
+        yum remove $i -y 
         done
 
         #remove openjdk
@@ -20,4 +20,5 @@ else
         #remove tomcat directories
         rm -rf /var/lib/tomcat
         rm -rf /var/log/tomcat
+        echo "Tomcat is now gone!"
 fi
