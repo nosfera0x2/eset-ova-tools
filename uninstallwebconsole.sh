@@ -11,7 +11,7 @@ else
         tomcat=$(rpm -qa | grep -i tomcat)
         for i in $tomcat
         do
-        rpm -e $tomcat -y
+        rpm -e $i
         done
 
         #remove openjdk
