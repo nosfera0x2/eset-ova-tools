@@ -2,8 +2,8 @@ rm /root/eset_installers/era.war
 wget -O /root/eset_installers/era.war https://download.eset.com/com/eset/apps/business/era/webconsole/latest/era.war
 #adding and organizing components
 
-yum install java-1.8.0-openjdk 
-yum install tomcat
+yum install java-1.8.0-openjdk -y
+yum install tomcat -y
 cp /root/eset_installers/era.war /var/lib/tomcat/webapps/
 
 systemctl restart tomcat
