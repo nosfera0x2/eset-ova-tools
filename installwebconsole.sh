@@ -1,4 +1,5 @@
-!#/bin/bash
+#!/bin/bash
+centosversion=$(rpm --eval '%{centos_ver}')
 if [$centosversion < 7]; then
         echo "Operating System Not Supported"
 else
