@@ -19,15 +19,11 @@ else
   #unzip contents of era.war file into the webapps directory
   unzip /var/lib/tomcat/webapps/era.war
   systemctl restart tomcat
-  ##these commands are for testing, in case directories are not made correctly##
-  #mkdir /var/lib/tomcat/webapps/era 
-  #move tomcat webconsole files to tomcat/webapps/era directory
-  #mv /var/lib/tomcat/error.html /var/lib/tomcat/webapps/era
-  #mv /var/lib/tomcat/index.html /var/lib/tomcat/webapps/era
-  #mv /var/lib/tomcat/META-INF /var/lib/tomcat/webapps/era
-  #mv /var/lib/tomcat/NOTICE /var/lib/tomcat/webapps/era
-  #mv /var/lib/tomcat/webconsole /var/lib/tomcat/webapps/era
-  #mv /var/lib/tomcat/WEB-INF /var/lib/tomcat/webapps/era
 
-  #now we need the new certificate, self sign it, and put it in server.xml
+  #now we need to restore server.xml and server.xml.rpmnew
+  rm -f /etc/tomcat/server.xml
+  rm -f /etc/tomcat/server.xml.rpmnew
+  cp /root/server.xml /etc/tomcat
+  cp /root/server.xml.rpmnew /etc/tomcat
+  systemctl restart tomcat
 fi
