@@ -10,6 +10,7 @@ else
         echo "Backing up server.xml..."
         sleep2
         cp /etc/tomcat/server.xml /root/
+        cp /etc/tomcat/server.xml.rpmnew /root/
 
         #loop to remove tomcat applications
         tomcat=$(yum list installed | grep -i tomcat)
