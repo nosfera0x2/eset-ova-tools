@@ -6,6 +6,10 @@ if [$centosversion < 7]; then
         echo "Operating System Not Supported"
 else
         echo "Proceeding with Operation"
+        sleep2
+        echo "Backing up server.xml..."
+        sleep2
+        cp /etc/tomcat/server.xml /root/
 
         #loop to remove tomcat applications
         tomcat=$(yum list installed | grep -i tomcat)
