@@ -1,12 +1,10 @@
-view server.html
-
 #!/bin/bash
 
-function install_lynx{
+function install_lynx(){
 	if yum list installed "lynx" >/dev/null 2>&1; then
-	echo "lynx already installed"
+		echo "lynx already installed"
 	else
-	yum install lynx
+		yum install lynx
 	fi
 	}
 	
