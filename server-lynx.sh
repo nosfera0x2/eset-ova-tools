@@ -7,10 +7,7 @@ function install_lynx(){
 		yum install lynx
 	fi
 	}
-	
+#run lynx function
 install_lynx()
-
+#lynx pulls up server status.html file
 lynx /var/log/eset/RemoteAdministrator/Server/status.html
-
-
-	
